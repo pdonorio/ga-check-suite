@@ -1,6 +1,7 @@
-on:
-  check_suite:
-    types: [completed]
+name: check
+
+on: 
+  status
 
 jobs:
   something:
@@ -10,3 +11,4 @@ jobs:
       - name: debug
         run: |
           echo "when did I run?"
+          echo "debugging ${{ toJson(github.event) }}"
