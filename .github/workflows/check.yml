@@ -1,7 +1,8 @@
 name: check
 
 on: 
-  status
+  status:
+  check_suite:
 
 jobs:
   something:
