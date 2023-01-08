@@ -1,0 +1,14 @@
+name: failing
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  something:
+    name: failing
+    runs-on: ubuntu-latest
+    steps:
+      - name: print
+        run: |
+          nocommand

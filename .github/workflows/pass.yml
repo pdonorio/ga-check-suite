@@ -1,0 +1,22 @@
+name: passing
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  something:
+    name: passing
+    runs-on: ubuntu-latest
+    steps:
+      - name: debug
+        uses: hmarr/debug-action@v2
+      - name: print
+        run: |
+          echo "payload: ${{ github.event }}]"
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: command
+        run: |
+          sleep 5
+          pwd
