@@ -5,10 +5,10 @@ on:
 
 jobs:
   something:
-    name: passing
+    name: check
     runs-on: ubuntu-latest
     steps:
       - name: debug
         run: |
-          echo "when did I run?"
+          echo "state ${{ github.event.state }}"
           echo "debugging ${{ toJson(github.event) }}"
