@@ -1,7 +1,9 @@
 name: check
 
 on: 
-  workflow_run:
+  check_run:
+  check_suite: 
+  status:
 
 jobs:
   something:

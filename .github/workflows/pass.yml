@@ -3,6 +3,8 @@ name: passing
 on:
   pull_request:
   push:
+    branches:
+      - main
 
 jobs:
   something:
