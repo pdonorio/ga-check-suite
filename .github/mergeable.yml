@@ -1,0 +1,8 @@
+version: 2
+mergeable:
+  - when: status.*, check_suite.*
+    name: "See if it passes all checks"
+    validate:
+      - do: comment
+        payload:
+          body: This PR is NOT a draft!
