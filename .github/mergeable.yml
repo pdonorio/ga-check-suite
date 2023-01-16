@@ -1,20 +1,9 @@
 version: 2
 mergeable:
-  - when: status.*, check_suite.*
-    name: "See if it passes all checks"
-    validate:
-      - do: description
-        must_exclude:
-          regex: 'DO NOT MERGE'
+  - when: pull_request.*, pull_request_review.*, status.*, check_suite.*
+    name: Making a test
+    validate: []
     pass:
       - do: comment
         payload:
-          body: passing
-    fail:
-      - do: comment
-        payload:
-          body: failed
-    error:
-      - do: comment
-        payload:
-          body: gave error
+          body: I am running
