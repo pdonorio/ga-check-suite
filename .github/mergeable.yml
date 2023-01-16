@@ -3,6 +3,18 @@ mergeable:
   - when: status.*, check_suite.*
     name: "See if it passes all checks"
     validate:
+      - do: description
+        must_exclude:
+          regex: 'DO NOT MERGE'
+    pass:
       - do: comment
         payload:
-          body: This PR is NOT a draft!
+          body: passing
+    fail:
+      - do: comment
+        payload:
+          body: failed
+    error:
+      - do: comment
+        payload:
+          body: gave error
